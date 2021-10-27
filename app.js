@@ -12,11 +12,6 @@ const errorHandlerMiddleware = require('./middleware/error-handler')
 app.use(express.static('./public'))
 app.use(express.json())
 
-/* // routes
-app.get('/', (req, res) => {
-    res.send('Task Manager App')
-}) */
-
 app.use('/api/v1/tasks', tasks)
 app.use(notFound)
 app.use(errorHandlerMiddleware)
@@ -33,12 +28,5 @@ const start = async () => {
        console.log(error)
      }}
 
+     
 start()
-
-
-
-// app.get('/api/v1/tasks') - get all the tasks
-// app.post('/api/v1/tasks') - create a new task
-// app.get('/api/v1/tasks/:id') - get single task
-// app.patch('/api/v1/tasks/:id') - edit task
-// app.delete('/api/v1/tasks/:id') - delete task
